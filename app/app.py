@@ -8,17 +8,15 @@ def hello_world():
         app.logger.info('default access')
         return "<p>Hello, World!</p>"
 
-@app.route("/stdout")
+@app.route("/info")
 def stdout_log():
-        # stdoutにログを出力
-        app.logger.info('test stdout access')
-        return "<p>Logged to stdout</p>"
+        app.logger.info('test info access')
+        return "<p>Logged to info</p>"
 
-@app.route("/stderr")
+@app.route("/err")
 def stderr_log():
-        # stderrにログを出力
-        app.logger.error('test stderr access')
-        return "<p>Logged to stderr</p>"
+        app.logger.error('test err access')
+        return "<p>Logged to err</p>"
 
 if __name__ == "__main__":
         app.run(host='0.0.0.0', port=80, debug=True)
