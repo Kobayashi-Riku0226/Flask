@@ -1,6 +1,8 @@
 from flask import Flask
+import logging
 
 app = Flask(__name__)
+app.logger.setLevel(logging.DEBUG)
 
 @app.route("/")
 def hello_world():
